@@ -1,18 +1,19 @@
- pipeline {	 
+ pipeline {
+   agent any 
    Stages { 
-     Stage (stage1) { 
-	     steps { 
-	       script { 
-		       sh "mvn clean install"
-		     }
-	     } 
-	   }   
-	   Stage (stage2) { 
-	     steps { 
-	       script { 
-		       sh "mvn clean install"
-		     }
-	       } 
-         }
-    } 
+     Stage("Stage1") { 
+	   steps { 
+	     script { 
+		   sh "mvn clean install"
+		 }
+	   } 
+	 }   
+	 Stage("Stage2") { 
+	   steps { 
+	     script { 
+		   sh "mvn clean install"
+		 }
+	   } 
+	 }
+   } 
  }
