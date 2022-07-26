@@ -1,19 +1,27 @@
- pipeline {
+pipeline {
    agent any 
-   stages { 
-     stage("Stage1") { 
+   Stages { 
+     Stage("Stage1") { 
 	   steps { 
-	     script { 
-		   bat "mvn clean install"
-		 }
+	     echo "on stage "
+		   sleep 5
 	   } 
 	 }   
-	 stage("Stage2") { 
-	   steps { 
-	     script { 
-		   bat "mvn clean install"
-		 }
-	   } 
+	 stage("parallel stage") {
+	 parallel {
+	   Stage("Stage2") { 
+	     steps { 
+	       echo "on stage 2"
+		   sleep 5
+	     } 
+	   }
+	   Stage("Stage3") { 
+	     steps { 
+	       echo "on stage 3"
+		   sleep 5
+	     } 
+	   }
 	 }
+     }	 
    } 
  }
