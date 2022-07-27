@@ -13,6 +13,7 @@
 	   steps { 
 	     script { 
 		   bat "mvn clean install"
+		   echo "stage 2 completed"
 		 }
 	   } 
 	 }
