@@ -5,6 +5,7 @@
 	   steps { 
 	     script { 
 		   bat "mvn clean install"
+		   echo "stage one completd"
 		 }
 	   } 
 	 }   
