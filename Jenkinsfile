@@ -1,9 +1,5 @@
  pipeline {
-   agent { 
-      agent1 {  
-        label 'maven' 
-      }
-   }	   
+   agent none   
    stages { 
      stage("Stage1") { 
 	   steps { 
