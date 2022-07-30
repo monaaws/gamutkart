@@ -1,12 +1,13 @@
  pipeline {
-   agent none   
+   agent any   
    stages { 
      stage("Stage1") { 
 	   steps { 
 	     script { 
 		   bat "mvn clean install"
 		   echo "stage one completd"
-		 }
+	          }
+	       }   
 	   } 
 	 }   
 	 stage("Stage2") { 
@@ -17,5 +18,8 @@
 		 }
 	   } 
 	 }
-   } 
- }
+      }    
+   }
+	  
+    
+ 
